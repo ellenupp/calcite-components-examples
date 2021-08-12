@@ -7,7 +7,12 @@ const {
 
 module.exports = function (defaults) {
 
-  let app = new EmberApp(defaults, {});
+  let app = new EmberApp(defaults, {
+    amd: {
+      loader: 'https://js.arcgis.com/4.21/',
+      packages: ['esri', 'dojo'],
+    }
+  });
 
   // Import the calcite CSS into the app CSS
   app.import('node_modules/@esri/calcite-components/dist/calcite/calcite.css');
